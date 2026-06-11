@@ -20,6 +20,13 @@ function doGet(e) {
       if (!id) throw new Error('Missing id.');
       setDone(id, done);
       payload = { ok: true, id, done };
+    } else if (op === 'ensureDoneRows') {
+      const ids = String(params.ids || '')
+        .split(',')
+        .map(id => id.trim())
+        .filter(Boolean);
+      ensureDoneRows(ids);
+      payload = { ok: true, count: ids.length };
     } else {
       payload = { ok: true, assignments: getAssignments(), done: getDone() };
     }
@@ -124,6 +131,35 @@ function setDone(id, done) {
     }
 
     sheet.appendRow([id, stored, now]);
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function ensureDoneRows(ids) {
+  if (!ids.length) return;
+
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+
+  try {
+    const sheet = getChecksSheet();
+    const values = sheet.getDataRange().getValues();
+    const existing = {};
+    const now = new Date();
+
+    for (let i = 1; i < values.length; i++) {
+      const id = String(values[i][0] || '').trim();
+      if (id) existing[id] = true;
+    }
+
+    const rows = ids
+      .filter(id => !existing[id])
+      .map(id => [id, 'not checked', now]);
+
+    if (rows.length) {
+      sheet.getRange(sheet.getLastRow() + 1, 1, rows.length, 3).setValues(rows);
+    }
   } finally {
     lock.releaseLock();
   }
