@@ -1,4 +1,5 @@
 const SHEET_NAME = 'Assignments';
+const CHECKS_SHEET_NAME = 'Checks';
 
 function doGet(e) {
   const params = e && e.parameter ? e.parameter : {};
@@ -13,8 +14,14 @@ function doGet(e) {
       if (!id) throw new Error('Missing id.');
       setAssignment(id, who);
       payload = { ok: true, id, who };
+    } else if (op === 'setDone') {
+      const id = String(params.id || '').trim();
+      const done = parseDone(params.done);
+      if (!id) throw new Error('Missing id.');
+      setDone(id, done);
+      payload = { ok: true, id, done };
     } else {
-      payload = { ok: true, assignments: getAssignments() };
+      payload = { ok: true, assignments: getAssignments(), done: getDone() };
     }
   } catch (err) {
     payload = { ok: false, error: err && err.message ? err.message : String(err) };
@@ -31,11 +38,21 @@ function doGet(e) {
 }
 
 function getSheet() {
+  return getOrCreateSheet(SHEET_NAME, ['id', 'who', 'updated_at']);
+}
+
+function getChecksSheet() {
+  return getOrCreateSheet(CHECKS_SHEET_NAME, ['id', 'done', 'updated_at']);
+}
+
+function getOrCreateSheet(name, headers) {
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = spreadsheet.getSheetByName(SHEET_NAME);
+  let sheet = spreadsheet.getSheetByName(name);
   if (!sheet) {
-    sheet = spreadsheet.insertSheet(SHEET_NAME);
-    sheet.appendRow(['id', 'who', 'updated_at']);
+    sheet = spreadsheet.insertSheet(name);
+    sheet.appendRow(headers);
+  } else if (sheet.getLastRow() === 0) {
+    sheet.appendRow(headers);
   }
   return sheet;
 }
@@ -76,7 +93,48 @@ function setAssignment(id, who) {
   }
 }
 
+function getDone() {
+  const sheet = getChecksSheet();
+  const values = sheet.getDataRange().getValues();
+  const done = {};
+
+  for (let i = 1; i < values.length; i++) {
+    const id = String(values[i][0] || '').trim();
+    if (id) done[id] = parseDone(values[i][1]);
+  }
+
+  return done;
+}
+
+function setDone(id, done) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+
+  try {
+    const sheet = getChecksSheet();
+    const values = sheet.getDataRange().getValues();
+    const now = new Date();
+    const stored = done ? 'checked' : 'not checked';
+
+    for (let i = 1; i < values.length; i++) {
+      if (String(values[i][0] || '').trim() === id) {
+        sheet.getRange(i + 1, 2, 1, 2).setValues([[stored, now]]);
+        return;
+      }
+    }
+
+    sheet.appendRow([id, stored, now]);
+  } finally {
+    lock.releaseLock();
+  }
+}
+
 function safeCallback(raw) {
   const callback = String(raw || '').trim();
   return /^[A-Za-z_$][A-Za-z0-9_$.]*$/.test(callback) ? callback : '';
+}
+
+function parseDone(raw) {
+  const value = String(raw || '').trim().toLowerCase();
+  return value === 'checked' || value === 'true' || value === '1';
 }
