@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  @media print {
+    .no-print { display: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#ece6d8;font-family:'Hanken Grotesk',sans-serif;color:#2a271f;padding:36px 20px 80px;">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:22px;">
+
+    <!-- HERO -->
+    <div style="background:#2f6d4f;border-radius:22px;overflow:hidden;color:#f3efe4;box-shadow:0 18px 40px -22px rgba(47,109,79,.7);">
+      <div style="padding:34px 36px 30px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk';font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#bcd9c8;">
+          <span style="width:8px;height:8px;border-radius:50%;background:#e3a44d;"></span>
+          Fim de semana fora · Verão '26
+        </div>
+        <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.02em;">Canas de Senhorim</h1>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;font-size:16px;color:#dceadf;">
+          <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:20px;">📅</span><span style="color:#eaf3ea;font-weight:600;">3 – 5 Julho 2026</span></div>
+          <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:20px;">🌙</span><span style="color:#eaf3ea;">2 noites · sex a dom</span></div>
+          <div style="display:flex;align-items:center;gap:9px;"><span style="font-size:20px;">🏡</span><span style="color:#eaf3ea;">Airbnb com amigos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EQUIPA / LEGENDA -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:2px 4px;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8c8470;margin-right:4px;">Equipa</span>
+      <span style="font-size:13.5px;font-weight:700;color:#9a3b48;background:#f6e2e4;border:1px solid #e8c4c9;border-radius:20px;padding:4px 13px;">Joana</span>
+      <span style="font-size:13.5px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 13px;">João P.</span>
+      <span style="font-size:13.5px;font-weight:700;color:#1f6b6b;background:#d8ecec;border:1px solid #b6dada;border-radius:20px;padding:4px 13px;">Diogo</span>
+      <span style="font-size:13.5px;font-weight:700;color:#5b3f93;background:#e9e3f4;border:1px solid #d3c7ec;border-radius:20px;padding:4px 13px;">Maria</span>
+      <span style="font-size:13.5px;font-weight:700;color:#2f5699;background:#dde7f5;border:1px solid #c2d3ef;border-radius:20px;padding:4px 13px;">David</span>
+      <span style="font-size:13.5px;font-weight:700;color:#3d6b2e;background:#e0eedd;border:1px solid #c6e0c0;border-radius:20px;padding:4px 13px;">Rodrigo</span>
+      <span style="font-size:13.5px;font-weight:700;color:#9c4f2f;background:#f5e3da;border:1px solid #eccebe;border-radius:20px;padding:4px 13px;">João</span>
+    </div>
+
+    <!-- TWO COLUMN: INFO AIRBNB + BOLEIAS -->
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:22px;">
+
+      <!-- INFO AIRBNB -->
+      <div style="background:#fbf8f0;border-radius:18px;border:1px solid #e6dfcd;padding:22px 24px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#2f6d4f;">A casa</span>
+          <div style="flex:1;height:1px;background:#e6dfcd;"></div>
+        </div>
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="casa-foto" shape="rounded" radius="14" placeholder="Largar foto do Airbnb" style="width:100%;height:150px;display:block;" hint-size="100%,150px"></x-import>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:15px;"><span style="color:#8c8470;">Morada</span><a href="https://maps.app.goo.gl/gfLvZjEX1q2AYkHUA" target="_blank" rel="noopener" style="font-weight:600;color:#2f6d4f;text-align:right;text-decoration:none;border-bottom:1px solid #b9d4c4;">Quinta dos Manteiros ↗</a></div>
+          <div style="height:1px;background:#efe9da;"></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:15px;"><span style="color:#8c8470;">Check-in</span><span style="font-weight:600;color:#5a5446;text-align:right;">sex, 3 jul · 16:00</span></div>
+          <div style="height:1px;background:#efe9da;"></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:15px;"><span style="color:#8c8470;">Check-out</span><span style="font-weight:600;color:#5a5446;text-align:right;">dom, 5 jul · 11:00</span></div>
+          <div style="height:1px;background:#efe9da;"></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:15px;"><span style="color:#8c8470;">Anfitrião</span><span style="font-weight:600;color:#5a5446;text-align:right;">José &amp; Cláudia · 966 868 060</span></div>
+          <div style="height:1px;background:#efe9da;"></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:15px;"><span style="color:#8c8470;">Wi-Fi</span><span style="font-weight:600;color:#5a5446;text-align:right;">a preencher</span></div>
+        </div>
+        <div style="background:#fdf3e7;border:1px solid #f0dcc0;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+          <span style="font-size:17px;line-height:1.2;flex:0 0 auto;">⚠️</span>
+          <div style="font-size:13px;color:#9a5e1e;line-height:1.5;">No GPS, procurar <strong>"Quinta dos Manteiros"</strong> (Maps / Waze). Se o caminho for indicado pela <strong>Póvoa de Lisboa</strong>, ignorar e seguir para a <strong>Póvoa de Santo António</strong> — no largo do fundo do povo há placas para a quinta.</div>
+        </div>
+      </div>
+
+      <!-- BOLEIAS -->
+      <div style="background:#fbf8f0;border-radius:18px;border:1px solid #e6dfcd;padding:22px 24px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#cf8a3b;">Boleias</span>
+          <div style="flex:1;height:1px;background:#e6dfcd;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="border:1px solid #e6dfcd;border-radius:13px;padding:13px 15px;background:#fffdf7;">
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#2a271f;margin-bottom:9px;">🚗 Carro 1</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;">
+              <span style="font-size:14px;font-weight:700;color:#9a3b48;background:#f6e2e4;border:1px solid #e8c4c9;border-radius:20px;padding:4px 12px;">Joana</span>
+              <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">João P.</span>
+            </div>
+          </div>
+          <div style="border:1px solid #e6dfcd;border-radius:13px;padding:13px 15px;background:#fffdf7;">
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#2a271f;margin-bottom:9px;">🚗 Carro 2</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;">
+              <span style="font-size:14px;font-weight:700;color:#1f6b6b;background:#d8ecec;border:1px solid #b6dada;border-radius:20px;padding:4px 12px;">Diogo</span>
+              <span style="font-size:14px;font-weight:700;color:#5b3f93;background:#e9e3f4;border:1px solid #d3c7ec;border-radius:20px;padding:4px 12px;">Maria</span>
+            </div>
+          </div>
+          <div style="border:1px dashed #e0b98a;border-radius:13px;padding:13px 15px;background:#fdf3e7;">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#cf8a3b;margin-bottom:8px;">Por distribuir pelos carros</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;">
+              <span style="font-size:14px;font-weight:700;color:#2f5699;background:#dde7f5;border:1px dashed #b1c6ea;border-radius:20px;padding:4px 12px;">David</span>
+              <span style="font-size:14px;font-weight:700;color:#3d6b2e;background:#e0eedd;border:1px dashed #bcd9b4;border-radius:20px;padding:4px 12px;">Rodrigo</span>
+              <span style="font-size:14px;font-weight:700;color:#9c4f2f;background:#f5e3da;border:1px dashed #e5c1ad;border-radius:20px;padding:4px 12px;">João</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGRAS & BOM SABER -->
+    <div style="display:grid;grid-template-columns:1fr 1.25fr;gap:22px;">
+
+      <!-- LEVAR RECOMENDADO -->
+      <div style="background:#eaf3ee;border-radius:18px;border:1px solid #cfe3d6;padding:24px 26px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px;">
+          <span style="font-size:20px;">🎒</span>
+          <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;color:#22503a;">A quinta recomenda levar</h2>
+        </div>
+        <p style="margin:0 0 12px;font-size:13px;color:#5e8270;">Há cortesia, mas leva o teu para garantir.</p>
+        <div>
+          <sc-for list="{{ tips }}" as="it" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid #d8e7dd;">
+              <div onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:12px;cursor:pointer;flex:1;min-width:0;">
+                <div style="{{ it.boxStyle }}">{{ it.mark }}</div>
+                <span style="{{ it.labelStyle }}">{{ it.label }}</span>
+              </div>
+              <select value="{{ it.who }}" onChange="{{ it.onAssign }}" style="{{ it.selectStyle }}">
+                <option value="">＋ quem leva?</option>
+                <option value="Joana">Joana</option>
+                <option value="João P.">João P.</option>
+                <option value="Diogo">Diogo</option>
+                <option value="Maria">Maria</option>
+                <option value="David">David</option>
+                <option value="Rodrigo">Rodrigo</option>
+                <option value="João">João</option>
+              </select>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- REGRAS DA CASA -->
+      <div style="background:#fbf8f0;border-radius:18px;border:1px solid #e6dfcd;padding:24px 26px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px;">
+          <span style="font-size:20px;">📋</span>
+          <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;color:#2a271f;">Regras da casa</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 20px;">
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span><strong>Check-in</strong> 16–20h · avisar chegada</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span><strong>Check-out</strong> 9–11h</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span>Máx. <strong>8 pessoas</strong> · sem animais · sem festas</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span>Silêncio <strong>23h–7h</strong></span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span>Não fumar dentro (cinzeiros lá fora)</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span>Piscina: 0,5–2 m · sem comida/bebida na zona</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#cf8a3b;">●</span><span>Jacuzzi: <strong>20€/dia</strong> e tapar ao sair</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span>Churrasqueira: deixar a grelha limpa</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span>Sanitas: nada de pensos/tampões (há baldes)</span></div>
+          <div style="display:flex;gap:9px;font-size:14px;color:#3a362c;line-height:1.45;"><span style="color:#2f6d4f;">●</span><span>Almofadas de exterior: recolher à noite</span></div>
+        </div>
+        <div style="margin-top:15px;display:flex;gap:12px;align-items:center;background:#eaf3ee;border:1px solid #cfe3d6;border-left:5px solid #2f6d4f;border-radius:13px;padding:14px 16px;">
+          <span style="font-size:22px;line-height:1;flex:0 0 auto;">🏖️</span>
+          <div style="line-height:1.45;"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;color:#22503a;margin-bottom:2px;">Traz as tuas toalhas para a piscina e relva</div><div style="font-size:13px;color:#5e8270;">As toalhas da casa de banho são só para o WC — a relva entranha-se nos turcos e obriga a lavagem pesada.</div></div>
+        </div>
+        <div style="margin-top:14px;padding-top:13px;border-top:1px solid #efe9da;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:6px;">Antes de sair (dom)</div>
+          <div style="font-size:13.5px;color:#5a5446;line-height:1.5;">Lixo orgânico fora · toalhas usadas no chão do WC · luzes/AC desligados · portas à chave · tapar o jacuzzi.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DECISÕES PENDENTES -->
+    <div style="background:#fffdf7;border-radius:18px;border:1px solid #e6dfcd;padding:24px 26px;border-left:5px solid #cf8a3b;">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;">
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:#2a271f;">A decidir</h2>
+        <span style="font-size:14px;color:#a89d83;">marca quando estiver fechado</span>
+      </div>
+      <p style="margin:0 0 14px;font-size:14px;color:#8c8470;">Pontos em aberto para combinar entre todos.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 26px;">
+        <sc-for list="{{ decisoes }}" as="it" hint-placeholder-count="4">
+          <div onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:13px;padding:11px 4px;cursor:pointer;border-bottom:1px solid #f0eadc;">
+            <div style="{{ it.boxStyle }}">{{ it.mark }}</div>
+            <span style="{{ it.labelStyle }}">{{ it.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- REFEIÇÕES -->
+    <div style="background:#fbf8f0;border-radius:18px;border:1px solid #e6dfcd;padding:24px 26px;">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:18px;">
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:#2a271f;">Refeições</h2>
+        <span style="font-size:14px;color:#a89d83;">o plano da comida</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#2f6d4f;display:flex;align-items:center;gap:8px;">Sexta <span style="font-size:13px;font-weight:500;color:#a89d83;">03 jul</span></div>
+          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Almoço</div><div style="font-size:15px;color:#3a362c;">Restaurante pelo caminho</div></div>
+          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Jantar</div><div style="font-size:15px;color:#3a362c;">Cozinhar — <span style="color:#9a9079;font-style:italic;">a decidir o quê</span></div></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#2f6d4f;display:flex;align-items:center;gap:8px;">Sábado <span style="font-size:13px;font-weight:500;color:#a89d83;">04 jul</span></div>
+          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Almoço</div><div style="font-size:15px;color:#3a362c;">Churrascada 🔥</div></div>
+          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Jantar</div><div style="font-size:15px;color:#3a362c;">Restos do almoço</div></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#2f6d4f;display:flex;align-items:center;gap:8px;">Domingo <span style="font-size:13px;font-weight:500;color:#a89d83;">05 jul</span></div>
+          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Almoço</div><div style="font-size:15px;color:#3a362c;">Restaurante pelo caminho</div></div>
+          <div style="border:1px dashed #ddd4bf;border-radius:12px;padding:12px 14px;display:flex;align-items:center;color:#a89d83;font-size:14px;font-style:italic;">Viagem de volta</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVAR: DUAS LISTAS -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;">
+
+      <!-- COMIDA & BEBIDA -->
+      <div style="background:#fbf8f0;border-radius:18px;border:1px solid #e6dfcd;padding:24px 26px;">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px;">
+          <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;color:#2a271f;">Já se pode levar</h2>
+        </div>
+        <p style="margin:0 0 12px;font-size:13px;color:#8c8470;">Comida &amp; bebida que não estraga.</p>
+        <div>
+          <sc-for list="{{ comida }}" as="it" hint-placeholder-count="9">
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid #f0eadc;">
+              <div onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:12px;cursor:pointer;flex:1;min-width:0;">
+                <div style="{{ it.boxStyle }}">{{ it.mark }}</div>
+                <span style="{{ it.labelStyle }}">{{ it.label }}</span>
+              </div>
+              <select value="{{ it.who }}" onChange="{{ it.onAssign }}" style="{{ it.selectStyle }}">
+                <option value="">＋ quem leva?</option>
+                <option value="Joana">Joana</option>
+                <option value="João P.">João P.</option>
+                <option value="Diogo">Diogo</option>
+                <option value="Maria">Maria</option>
+                <option value="David">David</option>
+                <option value="Rodrigo">Rodrigo</option>
+                <option value="João">João</option>
+              </select>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- CASA & CHURRASCO -->
+      <div style="background:#fbf8f0;border-radius:18px;border:1px solid #e6dfcd;padding:24px 26px;">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px;">
+          <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;color:#2a271f;">Casa &amp; churrasco</h2>
+        </div>
+        <p style="margin:0 0 12px;font-size:13px;color:#8c8470;">Utensílios, limpeza e fogo.</p>
+        <div>
+          <sc-for list="{{ casa }}" as="it" hint-placeholder-count="9">
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid #f0eadc;">
+              <div onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:12px;cursor:pointer;flex:1;min-width:0;">
+                <div style="{{ it.boxStyle }}">{{ it.mark }}</div>
+                <span style="{{ it.labelStyle }}">{{ it.label }}</span>
+              </div>
+              <select value="{{ it.who }}" onChange="{{ it.onAssign }}" style="{{ it.selectStyle }}">
+                <option value="">＋ quem leva?</option>
+                <option value="Joana">Joana</option>
+                <option value="João P.">João P.</option>
+                <option value="Diogo">Diogo</option>
+                <option value="Maria">Maria</option>
+                <option value="David">David</option>
+                <option value="Rodrigo">Rodrigo</option>
+                <option value="João">João</option>
+              </select>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- JOGOS / OUTROS -->
+    <div style="background:#fbf8f0;border-radius:18px;border:1px solid #e6dfcd;padding:24px 26px;">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px;">
+        <span style="font-size:20px;">🎲</span>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;color:#2a271f;">Jogos / outros</h2>
+      </div>
+      <p style="margin:0 0 12px;font-size:13px;color:#8c8470;">Para a tarde e o serão.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 28px;">
+        <sc-for list="{{ jogos }}" as="it" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid #f0eadc;">
+            <div onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:12px;cursor:pointer;flex:1;min-width:0;">
+              <div style="{{ it.boxStyle }}">{{ it.mark }}</div>
+              <span style="{{ it.labelStyle }}">{{ it.label }}</span>
+            </div>
+            <select value="{{ it.who }}" onChange="{{ it.onAssign }}" style="{{ it.selectStyle }}">
+              <option value="">＋ quem leva?</option>
+              <option value="Joana">Joana</option>
+              <option value="João P.">João P.</option>
+              <option value="Diogo">Diogo</option>
+              <option value="Maria">Maria</option>
+              <option value="David">David</option>
+              <option value="Rodrigo">Rodrigo</option>
+              <option value="João">João</option>
+            </select>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- FRIO + CONFIRMAR -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;">
+
+      <!-- PRECISA DE FRIO -->
+      <div style="background:#eaf3ee;border-radius:18px;border:1px solid #cfe3d6;padding:24px 26px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px;">
+          <span style="font-size:22px;">❄️</span>
+          <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;color:#22503a;">Precisa de frio</h2>
+        </div>
+        <p style="margin:0 0 12px;font-size:13px;color:#5e8270;">Comprar à última hora — mala térmica + gelo.</p>
+        <div>
+          <sc-for list="{{ frio }}" as="it" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid #d8e7dd;">
+              <div onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:12px;cursor:pointer;flex:1;min-width:0;">
+                <div style="{{ it.boxStyle }}">{{ it.mark }}</div>
+                <span style="{{ it.labelStyle }}">{{ it.label }}</span>
+              </div>
+              <select value="{{ it.who }}" onChange="{{ it.onAssign }}" style="{{ it.selectStyle }}">
+                <option value="">＋ quem leva?</option>
+                <option value="Joana">Joana</option>
+                <option value="João P.">João P.</option>
+                <option value="Diogo">Diogo</option>
+                <option value="Maria">Maria</option>
+                <option value="David">David</option>
+                <option value="Rodrigo">Rodrigo</option>
+                <option value="João">João</option>
+              </select>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- A CONFIRMAR -->
+      <div style="background:#fdf3e7;border-radius:18px;border:1px solid #f0dcc0;padding:24px 26px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px;">
+          <span style="font-size:22px;">🍺</span>
+          <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;color:#9a5e1e;">Bebidas a confirmar</h2>
+        </div>
+        <p style="margin:0 0 12px;font-size:13px;color:#b08043;">Decidir se levamos e quanto.</p>
+        <div>
+          <sc-for list="{{ confirmar }}" as="it" hint-placeholder-count="2">
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid #f2e1c9;">
+              <div onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:12px;cursor:pointer;flex:1;min-width:0;">
+                <div style="{{ it.boxStyle }}">{{ it.mark }}</div>
+                <span style="{{ it.labelStyle }}">{{ it.label }}</span>
+              </div>
+              <select value="{{ it.who }}" onChange="{{ it.onAssign }}" style="{{ it.selectStyle }}">
+                <option value="">＋ quem leva?</option>
+                <option value="Joana">Joana</option>
+                <option value="João P.">João P.</option>
+                <option value="Diogo">Diogo</option>
+                <option value="Maria">Maria</option>
+                <option value="David">David</option>
+                <option value="Rodrigo">Rodrigo</option>
+                <option value="João">João</option>
+              </select>
+            </div>
+          </sc-for>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align:center;padding-top:8px;color:#a89d83;font-size:13px;">
+      As marcações ficam guardadas neste dispositivo · bom fim de semana 🌿
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  KEY = 'canas-trip-v1';
+  WHO_KEY = 'canas-trip-who-v1';
+  CUSTOM_KEY = 'canas-trip-custom-v1';
+  PEOPLE = [
+    { name: 'Joana',   bg: '#f6e2e4', fg: '#9a3b48', bd: '#e8c4c9' },
+    { name: 'Jo\u00e3o P.', bg: '#f6e7d0', fg: '#8f6012', bd: '#ecd4a6' },
+    { name: 'Diogo',   bg: '#d8ecec', fg: '#1f6b6b', bd: '#b6dada' },
+    { name: 'Maria',   bg: '#e9e3f4', fg: '#5b3f93', bd: '#d3c7ec' },
+    { name: 'David',   bg: '#dde7f5', fg: '#2f5699', bd: '#c2d3ef' },
+    { name: 'Rodrigo', bg: '#e0eedd', fg: '#3d6b2e', bd: '#c6e0c0' },
+    { name: 'Jo\u00e3o',    bg: '#f5e3da', fg: '#9c4f2f', bd: '#eccebe' }
+  ];
+  state = { done: {}, who: {}, custom: {}, drafts: {} };
+
+  colorFor(name) {
+    return this.PEOPLE.find(p => p.name === name) || null;
+  }
+
+  componentDidMount() {
+    try {
+      const s = JSON.parse(localStorage.getItem(this.KEY) || '{}');
+      if (s && typeof s === 'object') this.setState({ done: s });
+    } catch (e) {}
+    try {
+      const w = JSON.parse(localStorage.getItem(this.WHO_KEY) || '{}');
+      if (w && typeof w === 'object') this.setState({ who: w });
+    } catch (e) {}
+    try {
+      const cu = JSON.parse(localStorage.getItem(this.CUSTOM_KEY) || '{}');
+      if (cu && typeof cu === 'object') this.setState({ custom: cu });
+    } catch (e) {}
+  }
+
+  toggle(id) {
+    this.setState(s => {
+      const done = { ...s.done, [id]: !s.done[id] };
+      try { localStorage.setItem(this.KEY, JSON.stringify(done)); } catch (e) {}
+      return { done };
+    });
+  }
+
+  assign(id, value) {
+    this.setState(s => {
+      const who = { ...s.who, [id]: value };
+      try { localStorage.setItem(this.WHO_KEY, JSON.stringify(who)); } catch (e) {}
+      return { who };
+    });
+  }
+
+  setDraft(prefix, value) {
+    this.setState(s => ({ drafts: { ...s.drafts, [prefix]: value } }));
+  }
+
+  addItem(prefix, raw) {
+    const label = (raw || '').trim();
+    if (!label) return;
+    this.setState(s => {
+      const list = (s.custom[prefix] || []).slice();
+      const id = prefix + '-c' + Date.now().toString(36) + Math.floor(Math.random() * 1296).toString(36);
+      list.push({ id, label });
+      const custom = { ...s.custom, [prefix]: list };
+      const drafts = { ...s.drafts, [prefix]: '' };
+      try { localStorage.setItem(this.CUSTOM_KEY, JSON.stringify(custom)); } catch (e) {}
+      return { custom, drafts };
+    });
+  }
+
+  removeItem(prefix, id) {
+    this.setState(s => {
+      const list = (s.custom[prefix] || []).filter(ci => ci.id !== id);
+      const custom = { ...s.custom, [prefix]: list };
+      try { localStorage.setItem(this.CUSTOM_KEY, JSON.stringify(custom)); } catch (e) {}
+      return { custom };
+    });
+  }
+
+  makeItem(id, label, prefix, removable) {
+    const isDone = !!this.state.done[id];
+    const boxStyle = {
+      width: '22px', height: '22px', borderRadius: '6px', flex: '0 0 auto',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontSize: '13px', fontWeight: 700, transition: 'all .15s',
+      border: isDone ? '2px solid #2f6d4f' : '2px solid #cdc6b6',
+      background: isDone ? '#2f6d4f' : '#ffffff',
+      color: isDone ? '#ffffff' : 'transparent'
+    };
+    const labelStyle = {
+      fontSize: '15.5px',
+      color: isDone ? '#a59c87' : '#34312a',
+      textDecoration: isDone ? 'line-through' : 'none'
+    };
+    const who = this.state.who[id] || '';
+    const c = who ? this.colorFor(who) : null;
+    const selectStyle = {
+      flex: '0 0 auto', fontSize: '12.5px', fontFamily: 'inherit', fontWeight: 700,
+      border: c ? '1px solid ' + c.bd : '1px solid #e0d8c4',
+      background: c ? c.bg : '#fbf8f0',
+      color: c ? c.fg : '#a89d83',
+      borderRadius: '20px', padding: '4px 9px', cursor: 'pointer',
+      maxWidth: '140px', appearance: 'none', outline: 'none'
+    };
+    const removeStyle = {
+      flex: '0 0 auto', cursor: 'pointer', color: '#c0b69c', fontSize: '13px',
+      fontWeight: 700, lineHeight: 1, padding: '3px 6px', borderRadius: '6px',
+      display: removable ? 'inline-flex' : 'none'
+    };
+    return {
+      id, label, isNormal: true, isAdder: false,
+      done: isDone, mark: isDone ? '\u2713' : '', boxStyle, labelStyle,
+      who, selectStyle, removeStyle,
+      onClick: () => this.toggle(id),
+      onAssign: (e) => this.assign(id, e.target.value),
+      onRemove: removable ? () => this.removeItem(prefix, id) : () => {}
+    };
+  }
+
+  makeAdder(prefix) {
+    return {
+      id: prefix + '-adder', isNormal: false, isAdder: true,
+      value: this.state.drafts[prefix] || '',
+      onType: (e) => this.setDraft(prefix, e.target.value),
+      onKey: (e) => { if (e.key === 'Enter') this.addItem(prefix, e.target.value); },
+      onAdd: () => this.addItem(prefix, this.state.drafts[prefix] || '')
+    };
+  }
+
+  mkPlain(list, prefix) {
+    return list.map((label, i) => this.makeItem(prefix + '-' + i, label, prefix, false));
+  }
+
+  mk(list, prefix) {
+    const base = list.map((label, i) => this.makeItem(prefix + '-' + i, label, prefix, false));
+    const custom = (this.state.custom[prefix] || []).map(ci => this.makeItem(ci.id, ci.label, prefix, true));
+    return [...base, ...custom, this.makeAdder(prefix)];
+  }
+
+  renderVals() {
+    return {
+      comida: this.mk(['\u00c1gua engarrafada', 'Sumos', 'Bolachas', 'Massa', 'Arroz', 'Batata frita', 'Nachos', 'Temperos', 'Frutos secos (amendoins, cajus)'], 'food'),
+      casa: this.mk(['Papel higi\u00e9nico (confirmar)', 'Papel de cozinha', 'Guardanapos', 'Sacos do lixo', 'Papel de alum\u00ednio', 'Papel aderente', 'Tupperwares (p/ sobras)', 'Carv\u00e3o', 'Acendalhas'], 'casa'),
+      frio: this.mk(['Gelo', 'Carne', 'Gelado'], 'frio'),
+      jogos: this.mk(['UNO', 'Cartas', 'Bola de praia / v\u00f3lei (ou outras)'], 'jogo'),
+      tips: this.mk(['C\u00e1psulas de caf\u00e9 (Delta)', 'Pastilhas p/ m\u00e1quina de loi\u00e7a', 'Toalhas de praia/piscina pr\u00f3prias'], 'tip'),
+      confirmar: this.mk(['Cerveja \u2014 Sagres / Super Bock / Heineken', 'Outras bebidas alco\u00f3licas'], 'conf'),
+      decisoes: this.mk(['Onde almo\u00e7ar 6\u00aa e domingo', '1 ida \u00e0s compras na 6\u00aa, ou 2\u00aa ida ap\u00f3s ver a casa?', 'Quem leva os jogos e quais', 'Sumos \u2014 quais e quantos'], 'dec')
+    };
+  }
+}
+</script>
+</body>
+</html>
