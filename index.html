@@ -382,6 +382,8 @@ class Component extends DCLogic {
   KEY = 'canas-trip-v1';
   WHO_KEY = 'canas-trip-who-v1';
   CUSTOM_KEY = 'canas-trip-custom-v1';
+  SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzwbifWzxkBsA4NZ_DRcYCmWEr3FbqPoahdCpVRJQehKqC0Rk2YQhYSE4oHSFxiy_F7/exec';
+  _jsonpSeq = 0;
   PEOPLE = [
     { name: 'Joana',   bg: '#f6e2e4', fg: '#9a3b48', bd: '#e8c4c9' },
     { name: 'Jo\u00e3o P.', bg: '#f6e7d0', fg: '#8f6012', bd: '#ecd4a6' },
@@ -410,6 +412,53 @@ class Component extends DCLogic {
       const cu = JSON.parse(localStorage.getItem(this.CUSTOM_KEY) || '{}');
       if (cu && typeof cu === 'object') this.setState({ custom: cu });
     } catch (e) {}
+    this.loadAssignmentsFromSheets();
+  }
+
+  sheetsEnabled() {
+    return /^https:\/\/script\.google\.com\/macros\/s\//.test(this.SHEETS_WEB_APP_URL);
+  }
+
+  sheetsRequest(params) {
+    if (!this.sheetsEnabled()) return Promise.resolve(null);
+    return new Promise((resolve, reject) => {
+      const callbackName = '__canasSheets' + (++this._jsonpSeq);
+      const url = new URL(this.SHEETS_WEB_APP_URL);
+      Object.keys(params).forEach(k => url.searchParams.set(k, params[k] == null ? '' : String(params[k])));
+      url.searchParams.set('callback', callbackName);
+
+      const script = document.createElement('script');
+      const cleanup = () => {
+        delete window[callbackName];
+        if (script.parentNode) script.parentNode.removeChild(script);
+      };
+
+      window[callbackName] = (data) => {
+        cleanup();
+        resolve(data);
+      };
+      script.onerror = () => {
+        cleanup();
+        reject(new Error('Could not reach Google Sheets.'));
+      };
+      script.src = url.toString();
+      document.head.appendChild(script);
+    });
+  }
+
+  loadAssignmentsFromSheets() {
+    this.sheetsRequest({ op: 'list' }).then(data => {
+      if (!data || !data.ok || !data.assignments || typeof data.assignments !== 'object') return;
+      this.setState(s => {
+        const who = { ...s.who, ...data.assignments };
+        try { localStorage.setItem(this.WHO_KEY, JSON.stringify(who)); } catch (e) {}
+        return { who };
+      });
+    }).catch(() => {});
+  }
+
+  saveAssignmentToSheets(id, value) {
+    this.sheetsRequest({ op: 'set', id, who: value || '' }).catch(() => {});
   }
 
   toggle(id) {
@@ -426,6 +475,7 @@ class Component extends DCLogic {
       try { localStorage.setItem(this.WHO_KEY, JSON.stringify(who)); } catch (e) {}
       return { who };
     });
+    this.saveAssignmentToSheets(id, value);
   }
 
   setDraft(prefix, value) {
