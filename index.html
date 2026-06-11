@@ -89,6 +89,8 @@
             <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#2a271f;margin-bottom:9px;">🚗 Carro 1</div>
             <div style="display:flex;flex-wrap:wrap;gap:7px;">
               <span style="font-size:14px;font-weight:700;color:#9a3b48;background:#f6e2e4;border:1px solid #e8c4c9;border-radius:20px;padding:4px 12px;">Joana</span>
+              <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">David</span>
+              <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">Rodrigo</span>
               <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">João P.</span>
             </div>
           </div>
@@ -97,16 +99,9 @@
             <div style="display:flex;flex-wrap:wrap;gap:7px;">
               <span style="font-size:14px;font-weight:700;color:#1f6b6b;background:#d8ecec;border:1px solid #b6dada;border-radius:20px;padding:4px 12px;">Diogo</span>
               <span style="font-size:14px;font-weight:700;color:#5b3f93;background:#e9e3f4;border:1px solid #d3c7ec;border-radius:20px;padding:4px 12px;">Maria</span>
+              <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">João B.</span>
             </div>
-          </div>
-          <div style="border:1px dashed #e0b98a;border-radius:13px;padding:13px 15px;background:#fdf3e7;">
-            <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#cf8a3b;margin-bottom:8px;">Por distribuir pelos carros</div>
-            <div style="display:flex;flex-wrap:wrap;gap:7px;">
-              <span style="font-size:14px;font-weight:700;color:#2f5699;background:#dde7f5;border:1px dashed #b1c6ea;border-radius:20px;padding:4px 12px;">David</span>
-              <span style="font-size:14px;font-weight:700;color:#3d6b2e;background:#e0eedd;border:1px dashed #bcd9b4;border-radius:20px;padding:4px 12px;">Rodrigo</span>
-              <span style="font-size:14px;font-weight:700;color:#9c4f2f;background:#f5e3da;border:1px dashed #e5c1ad;border-radius:20px;padding:4px 12px;">João</span>
-            </div>
-          </div>
+          </div>   
         </div>
       </div>
     </div>
@@ -200,7 +195,7 @@
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#2f6d4f;display:flex;align-items:center;gap:8px;">Sexta <span style="font-size:13px;font-weight:500;color:#a89d83;">03 jul</span></div>
           <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Almoço</div><div style="font-size:15px;color:#3a362c;">Restaurante pelo caminho</div></div>
-          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Jantar</div><div style="font-size:15px;color:#3a362c;">Cozinhar — <span style="color:#9a9079;font-style:italic;">a decidir o quê</span></div></div>
+          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Jantar</div><div style="font-size:15px;color:#3a362c;">Mexicano (carne picada + tortilla)</span></div></div>
         </div>
 
         <div style="display:flex;flex-direction:column;gap:12px;">
@@ -599,10 +594,10 @@ class Component extends DCLogic {
 
   renderVals() {
     return {
-      comida: this.mk(['\u00c1gua engarrafada', 'Sumos', 'Bolachas', 'Massa', 'Arroz', 'Batata frita', 'Nachos', 'Temperos', 'Frutos secos (amendoins, cajus)', 'Melancia', 'Leite Maria', 'Pão João B.'], 'food'),
+      comida: this.mk(['\u00c1gua engarrafada', 'Sumos', 'Bolachas', 'Massa', 'Arroz', 'Batata frita', 'Nachos', 'Temperos', 'Frutos secos (amendoins, cajus)', 'Melancia', 'Leite Maria', 'Pão João B.', 'Tortilla João B.'], 'food'),
       casa: this.mk(['Papel higi\u00e9nico (confirmar)', 'Papel de cozinha', 'Guardanapos', 'Sacos do lixo', 'Papel de alum\u00ednio', 'Papel aderente', 'Tupperwares (p/ sobras)', 'Carv\u00e3o', 'Acendalhas'], 'casa'),
       frio: this.mk(['Gelo', 'Carne', 'Gelado'], 'frio'),
-      jogos: this.mk(['UNO', 'Cartas', 'Bola de praia / v\u00f3lei (ou outras)'], 'jogo'),
+      jogos: this.mk(['UNO', 'Cartas', 'Bola de praia / v\u00f3lei (ou outras)', 'Quick stop'], 'jogo'),
       tips: this.mk(['C\u00e1psulas de caf\u00e9 (Delta)', 'Pastilhas p/ m\u00e1quina de loi\u00e7a', 'Toalhas de praia/piscina pr\u00f3prias'], 'tip'),
       confirmar: this.mk(['Cerveja \u2014 Sagres / Super Bock / Heineken', 'Outras bebidas alco\u00f3licas'], 'conf'),
       decisoes: this.mk(['Onde almo\u00e7ar 6\u00aa e domingo', '1 ida \u00e0s compras na 6\u00aa, ou 2\u00aa ida ap\u00f3s ver a casa?', 'Quem leva os jogos e quais', 'Sumos \u2014 quais e quantos'], 'dec')
