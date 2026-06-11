@@ -48,7 +48,7 @@ function getAssignments() {
   for (let i = 1; i < values.length; i++) {
     const id = String(values[i][0] || '').trim();
     const who = String(values[i][1] || '').trim();
-    if (id && who) assignments[id] = who;
+    if (id) assignments[id] = who;
   }
 
   return assignments;
