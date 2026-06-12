@@ -10,13 +10,11 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; }
-  @media print {
-    .no-print { display: none !important; }
-  }
+  @media print { .no-print { display: none !important; } }
 </style>
 </helmet>
 
@@ -86,22 +84,35 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div style="border:1px solid #e6dfcd;border-radius:13px;padding:13px 15px;background:#fffdf7;">
-            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#2a271f;margin-bottom:9px;">🚗 Carro 1</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#2a271f;margin-bottom:9px;">🚗 Carro 1 <span style="font-weight:600;font-size:13px;color:#9a3b48;">· Joana conduz</span></div>
             <div style="display:flex;flex-wrap:wrap;gap:7px;">
               <span style="font-size:14px;font-weight:700;color:#9a3b48;background:#f6e2e4;border:1px solid #e8c4c9;border-radius:20px;padding:4px 12px;">Joana</span>
-              <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">David</span>
-              <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">Rodrigo</span>
+              <span style="font-size:14px;font-weight:700;color:#2f5699;background:#dde7f5;border:1px solid #c2d3ef;border-radius:20px;padding:4px 12px;">David</span>
+              <span style="font-size:14px;font-weight:700;color:#3d6b2e;background:#e0eedd;border:1px solid #c6e0c0;border-radius:20px;padding:4px 12px;">Rodrigo</span>
               <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">João P.</span>
+            </div>
+            <div style="margin-top:11px;display:flex;flex-direction:column;gap:0;border-top:1px solid #efe9da;padding-top:9px;">
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:#3a362c;padding:3px 0;"><span style="font-variant-numeric:tabular-nums;font-weight:700;color:#cf8a3b;min-width:42px;">9h00</span><span>Joana sai</span></div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:#3a362c;padding:3px 0;"><span style="font-variant-numeric:tabular-nums;font-weight:700;color:#cf8a3b;min-width:42px;">9h10</span><span>apanha o <strong>David</strong></span></div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:#3a362c;padding:3px 0;"><span style="font-variant-numeric:tabular-nums;font-weight:700;color:#cf8a3b;min-width:42px;">9h30</span><span>apanha o <strong>Rodrigo</strong></span></div>
             </div>
           </div>
           <div style="border:1px solid #e6dfcd;border-radius:13px;padding:13px 15px;background:#fffdf7;">
-            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#2a271f;margin-bottom:9px;">🚗 Carro 2</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#2a271f;margin-bottom:9px;">🚗 Carro 2 <span style="font-weight:600;font-size:13px;color:#1f6b6b;">· Diogo &amp; Maria</span></div>
             <div style="display:flex;flex-wrap:wrap;gap:7px;">
               <span style="font-size:14px;font-weight:700;color:#1f6b6b;background:#d8ecec;border:1px solid #b6dada;border-radius:20px;padding:4px 12px;">Diogo</span>
               <span style="font-size:14px;font-weight:700;color:#5b3f93;background:#e9e3f4;border:1px solid #d3c7ec;border-radius:20px;padding:4px 12px;">Maria</span>
-              <span style="font-size:14px;font-weight:700;color:#8f6012;background:#f6e7d0;border:1px solid #ecd4a6;border-radius:20px;padding:4px 12px;">João B.</span>
+              <span style="font-size:14px;font-weight:700;color:#9c4f2f;background:#f5e3da;border:1px solid #eccebe;border-radius:20px;padding:4px 12px;">João B.</span>
             </div>
-          </div>   
+            <div style="margin-top:11px;display:flex;flex-direction:column;gap:0;border-top:1px solid #efe9da;padding-top:9px;">
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:#3a362c;padding:3px 0;"><span style="font-variant-numeric:tabular-nums;font-weight:700;color:#cf8a3b;min-width:42px;">8h30</span><span><strong>Maria</strong> e <strong>Diogo</strong> saem</span></div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:#3a362c;padding:3px 0;"><span style="font-variant-numeric:tabular-nums;font-weight:700;color:#cf8a3b;min-width:42px;">9h30</span><span>apanham o <strong>João B.</strong></span></div>
+            </div>
+          </div>
+          <div style="border:1px solid #d8c5a0;border-radius:13px;padding:13px 15px;background:#fdf3e7;display:flex;gap:11px;align-items:flex-start;">
+            <span style="font-size:18px;line-height:1.1;flex:0 0 auto;">📍</span>
+            <div style="line-height:1.45;"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;color:#9a5e1e;margin-bottom:2px;">Ponto de encontro · Cartaxo</div><div style="font-size:13px;color:#b08043;">Os dois carros juntam-se no Cartaxo, onde se apanha o <strong>João P.</strong></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -195,7 +206,7 @@
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#2f6d4f;display:flex;align-items:center;gap:8px;">Sexta <span style="font-size:13px;font-weight:500;color:#a89d83;">03 jul</span></div>
           <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Almoço</div><div style="font-size:15px;color:#3a362c;">Restaurante pelo caminho</div></div>
-          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Jantar</div><div style="font-size:15px;color:#3a362c;">Mexicano (carne picada + tortilla)</span></div></div>
+          <div style="background:#fff;border:1px solid #ece5d4;border-radius:12px;padding:12px 14px;"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cf8a3b;margin-bottom:4px;">Jantar</div><div style="font-size:15px;color:#3a362c;">Mexicano (carne picada + tortilla)</div></div>
         </div>
 
         <div style="display:flex;flex-direction:column;gap:12px;">
@@ -360,7 +371,6 @@
             </div>
           </sc-for>
         </div>
-        
       </div>
     </div>
 
@@ -594,8 +604,8 @@ class Component extends DCLogic {
 
   renderVals() {
     return {
-      comida: this.mk(['\u00c1gua engarrafada', 'Coca-cola', 'Sumol Laranja', 'Iced Tea Limão', 'Gasosa', 'Bolachas', 'Arroz', 'Batata frita', 'Nachos', 'Temperos', 'Frutos secos (amendoins, cajus)', 'Melancia', 'Leite Maria', 'Pão João B.', 'Tortilla João B.', 'Licor para sangria'], 'food'),
-      casa: this.mk(['Papel higi\u00e9nico (confirmar)', 'Papel de cozinha', 'Guardanapos', 'Sacos do lixo', 'Papel de alum\u00ednio', 'Papel aderente', 'Tupperwares (p/ sobras)', 'Carv\u00e3o', 'Acendalhas', 'Panos de Cozinha', 'Chouriço para Assar'], 'casa'),
+      comida: this.mk(['\u00c1gua engarrafada', 'Coca-cola', 'Sumol Laranja', 'Iced Tea Lim\u00e3o', 'Gasosa', 'Bolachas', 'Arroz', 'Batata frita', 'Nachos', 'Temperos', 'Frutos secos (amendoins, cajus)', 'Melancia', 'Leite Maria', 'P\u00e3o Jo\u00e3o B.', 'Tortilla Jo\u00e3o B.', 'Licor para sangria'], 'food'),
+      casa: this.mk(['Papel higi\u00e9nico (confirmar)', 'Papel de cozinha', 'Guardanapos', 'Sacos do lixo', 'Papel de alum\u00ednio', 'Papel aderente', 'Tupperwares (p/ sobras)', 'Carv\u00e3o', 'Acendalhas', 'Panos de Cozinha', 'Chouri\u00e7o para Assar'], 'casa'),
       frio: this.mk(['Gelo', 'Carne', 'Gelado'], 'frio'),
       jogos: this.mk(['UNO', 'Cartas', 'Cards Against Humanity', 'Bola de praia / v\u00f3lei (ou outras)', 'Quick stop'], 'jogo'),
       tips: this.mk(['C\u00e1psulas de caf\u00e9 (Delta)', 'Pastilhas p/ m\u00e1quina de loi\u00e7a', 'Toalhas de praia/piscina pr\u00f3prias'], 'tip'),
