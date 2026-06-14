@@ -72,3 +72,5 @@ On load, localStorage is read first (instant), then Sheets is fetched and merged
 ## People
 
 Joana · João P. · Diogo · Maria · David · Rodrigo · João
+
+https://docs.google.com/spreadsheets/d/1UlZr1ynGipLd33xHF4ET2rgJTBoszwD0AqvIxHMSgLg/edit?usp=drivesdk
